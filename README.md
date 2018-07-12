@@ -31,4 +31,4 @@ python main.py -d ~/project/test_project -m sub_module -o HEAD~1
   
   \-o, \-old_version   指定对比的版本号, 如果该参数没有给出，默认与前一个版本进行对比(HEAD\~1)。该参数支持 git commit hash 或者 HEAD~n 的格式。
   
-  \-m, \-module        需要处理的子模块(如果制定的工程没有子模块，需要自行修改一些代码)
+  \-m, \-module        需要处理的子模块(如果指定的工程没有子模块，需要自行修改一些代码)
