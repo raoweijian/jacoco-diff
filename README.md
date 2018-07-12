@@ -25,10 +25,10 @@ python main.py -d ~/project/test_project -m sub_module -o HEAD~1
 ```
 
 ## 参数说明
-  -h, --help                show this help message and exit
+  \-h, \-\-help        打印帮助信息
   
-  -dir DIR                  工程根目录
+  \-d, \-dir           工程根目录
   
-  -old_version OLD_VERSION  指定对比的版本号, 如果该参数没有给出，默认与前一个版本进行对比(HEAD\~1)。该参数支持 git commit hash 或者 HEAD~n 的格式。
+  \-o, \-old_version   指定对比的版本号, 如果该参数没有给出，默认与前一个版本进行对比(HEAD\~1)。该参数支持 git commit hash 或者 HEAD~n 的格式。
   
-  -module MODULE            需要处理的子模块(如果制定的工程没有子模块，需要自行修改一些代码)
+  \-m, \-module        需要处理的子模块(如果制定的工程没有子模块，需要自行修改一些代码)
