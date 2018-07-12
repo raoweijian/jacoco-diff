@@ -13,9 +13,16 @@
 ![图片](http://ovh9b5ele.bkt.clouddn.com/yAEHZSeukx8mwlH4lCNl.png)
 
 # 用法
-`
-python main.py -d ~/jenkins_workspace/workspace/account_server -m account-impl -o HEAD~5
-`
+```shell
+# 假设工程路径为 ~/project/test_project
+cd ~/project/test_project
+
+# 执行单测，生成 jacoco 覆盖率报告
+mvn clean test
+
+# 使用本工具，计算增量覆盖率，并修改覆盖率报告
+python main.py -d ~/project/test_project -m sub_module -o HEAD~1
+```
 
 ## 参数说明
   -h, --help                show this help message and exit
