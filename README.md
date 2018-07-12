@@ -7,9 +7,10 @@
 ![图片](http://ovh9b5ele.bkt.clouddn.com/PNovOQMLbnfXfzbJbInE.png)
 
 ### 覆盖率报告
-新增的行首增加蓝色钻石标志，与其它钻石不冲突
-![图片](http://ovh9b5ele.bkt.clouddn.com/yAEHZSeukx8mwlH4lCNl.png)
 
+新增的行首增加蓝色钻石标志，与其它钻石不冲突
+
+![图片](http://ovh9b5ele.bkt.clouddn.com/yAEHZSeukx8mwlH4lCNl.png)
 
 # 用法
 `
