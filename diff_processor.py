@@ -5,15 +5,12 @@ from git import Repo
 
 
 class DiffProcessor():
-    def __init__(self, project_dir, old_version, module_name):
+    def __init__(self, project_dir, old_version):
         self.project_dir = project_dir
         self.old_version = old_version
-        self.module_name = module_name
         self.repo = Repo(self.project_dir)
 
     def resolve_file_info(self, file_name):
-        module_name = file_name.split('/')[0]
-
         full_path = os.path.join(self.project_dir, file_name)
         package = self.get_package(full_path)
 
@@ -21,7 +18,7 @@ class DiffProcessor():
 
         is_interface = self.is_interface(full_path)
 
-        return (module_name, package, class_, is_interface)
+        return (package, class_, is_interface)
 
     def get_package(self, file_name):
         """获取package名"""
@@ -117,12 +114,12 @@ class DiffProcessor():
             if not file_name.endswith(".java") or 'src/test/java/' in file_name:
                 continue
 
-            module_name, package, class_, is_interface = self.resolve_file_info(file_name)
+            package, class_, is_interface = self.resolve_file_info(file_name)
             # 过滤掉接口和非指定的module
-            if is_interface or module_name != self.module_name:
+            if is_interface:
                 continue
 
-            html_file_name = os.path.join(self.project_dir, module_name, 'target/site/jacoco/', package, "{}.java.html".format(class_))
+            html_file_name = os.path.join(self.project_dir, 'target/site/jacoco/', package, "{}.java.html".format(class_))
             new_line_count, cover_line_count = self.modify_html(html_file_name, diff_result[file_name])
             print("package {}, class {}, 新增 {} 行, 覆盖 {} 行".format(package, class_, new_line_count, cover_line_count))
 
