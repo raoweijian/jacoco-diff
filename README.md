@@ -4,13 +4,13 @@
 
 # 结果展示
 ### 命令行提示
-![图片](http://ovh9b5ele.bkt.clouddn.com/PNovOQMLbnfXfzbJbInE.png)
+![pic](https://github.com/raoweijian/jacoco-diff/blob/master/pics/help.png)
 
 ### 覆盖率报告
 
 新增的行首增加蓝色钻石标志，与其它钻石不冲突
 
-![图片](http://ovh9b5ele.bkt.clouddn.com/yAEHZSeukx8mwlH4lCNl.png)
+![pic](https://github.com/raoweijian/jacoco-diff/blob/master/pics/report.png)
 
 # 用法
 ```shell
@@ -21,7 +21,7 @@ cd ~/project/test_project
 mvn clean test
 
 # 使用本工具，计算增量覆盖率，并修改覆盖率报告
-python main.py -d ~/project/test_project -m sub_module -o HEAD~1
+python main.py -d ~/project/test_project -o HEAD~1
 ```
 
 ## 参数说明
@@ -30,5 +30,3 @@ python main.py -d ~/project/test_project -m sub_module -o HEAD~1
   \-d, \-dir           工程根目录
   
   \-o, \-old_version   指定对比的版本号, 如果该参数没有给出，默认与前一个版本进行对比(HEAD\~1)。该参数支持 git commit hash 或者 HEAD~n 的格式。
-  
-  \-m, \-module        需要处理的子模块(如果指定的工程没有子模块，需要自行修改一些代码)
